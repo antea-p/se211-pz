@@ -140,7 +140,7 @@ class ArgParserTest {
 
     @Test
     void testInvalidHour() {
-        String[] args = {"0", "0", "2022-09-15T24:00:00Z", "abduction"};
+        String[] args = {"0", "0", "2022-09-15T25:00:00Z", "abduction"};
         assertThrows(IllegalArgumentException.class, () -> argParser.parse(args));
     }
 
@@ -152,7 +152,7 @@ class ArgParserTest {
 
     @Test
     void testInvalidSecond() {
-        String[] args = {"0", "0", "2022-09-15T23:59:60Z", "abduction"};
+        String[] args = {"0", "0", "2022-09-15T23:59:61Z", "abduction"};
         assertThrows(IllegalArgumentException.class, () -> argParser.parse(args));
     }
 
